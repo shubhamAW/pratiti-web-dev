@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        progress{
+            height:50px;
+        }
+    </style>
+</head>
+<body>
+    <progress id="progress" max="100" value="90"></progress>
+    <script>
+        let p= document.getElementById("progress");
+        let timer= setInterval(() => {
+           p.value+=1; 
+           console.log(p.value);
+           //stop setInterval when reaches to 100
+           if(p.value==100){
+            clearInterval(timer);
+           }
+          
+        }, 1000);
+    </script>
+</body>
+</html>

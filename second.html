@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <table id="table">
+        <thead>
+          <tr>
+            <th>Employee id</th>
+            <th>Employee name</th>
+            <th>Employee salary</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>john</td>
+            <td>10000</td>
+            <td>
+              <button  onclick="upNdown('up');"  class="up">Up</button>
+              <button onclick="upNdown('down');" class="down">Down</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>ahrn</td>
+            <td>10000</td>
+            <td>
+              <button  onclick="upNdown('up');"  class="up">Up</button>
+              <button  onclick="upNdown('down');" class="down">Down</button>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>sandy</td>
+            <td>20000</td>
+            <td>
+              <button onclick="upNdown('up');" class="up">Up</button>
+              <button onclick="upNdown('down');"  class="down">Down</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+    <script>
+        const table = document.getElementById("table");
+
+        table.addEventListener("click", function(event) {
+        if (event.target.className === "up") {
+            let row = event.target.parentNode.parentNode;
+            let previousRow = row.previousSibling;
+            if (previousRow) {
+            table.tBodies[0].insertBefore(row, previousRow);
+            }
+        } else if (event.target.className === "down") {
+            let row = event.target.parentNode.parentNode;
+            let nextRow = row.nextSibling.nextSibling;
+            if (nextRow) {
+            table.tBodies[0].insertBefore(nextRow, row);
+            }
+        }
+        });
+
+        
+    </script>
+</body>
+</html>

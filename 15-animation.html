@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15. Animation</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+
+    <style>
+        h1{
+            color: red;
+            animation-name: mymove;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            display:inline-block;
+            font-family: 'Poppins', sans-serif;
+        }
+        @keyframes mymove{
+            from{
+               margin-left:100%;
+               width:300%;
+            }
+
+            to{
+                margin-left:-60%;
+                width:100%;
+            }
+        }
+        .resp{
+            border: 5px dashed black;
+          
+        }
+        @media screen and (min-width: 600px) {
+               .resp{
+                     border: 5px solid red;
+                     background-color: yellow;
+               }
+         }
+    </style>
+</head>
+<body">
+    <!-- <h1>Dj aur Mj ki Kahaani!!</h1> -->
+
+    <!-- <div class="resp">
+        <h1>shubham Waykar</h1>
+    </div> -->
+
+</body>
+</html>

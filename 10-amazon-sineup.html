@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Sineup clone</title>
+    <style>
+       
+        .container__body{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            padding-left:10%;
+            padding-right:10%;
+            margin:40px;
+            padding:20px;
+        }
+        .container__form{
+            border-radius:10px;
+            border:0.2px solid black;
+            display:block;
+            padding:20px;
+            width:70%;
+            margin-top:20px;
+        }
+        .container__formchild{
+           font-size: large;
+           padding-top:10px;
+           font-weight: semi-bold;
+        }
+        .button{
+            margin-top:20px;
+            padding:10px;
+            border-radius: 10px;
+            background-color: goldenrod;
+            border-width: 0;
+            font-weight: bold;
+            
+        }
+    .form__input{
+        width:90%;
+        padding:10px;
+        border-radius: 10px;
+        border:1px solid black;
+    }
+    .form__button{
+        margin-left:13%;
+        margin-right:10%;
+    
+    }
+    .container__privacy{
+        margin-top:20px;
+        font-size: small;
+        padding-left:10px;
+    }
+    .container__footer{
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        
+    }
+    .container__footerchild{
+        margin-left:10px;
+        margin-right:10px;
+        color:blue;
+        font-size:small;
+    }
+    .container__image{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100px;
+        width:100px;
+        margin-top:40px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container__body">
+        <div class="container__image">
+            <!-- logo of amazon -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png" alt="amazon logo" height="40px">
+        </div>
+        <div class="container__form">
+            <!-- form div -->
+            <div>
+                <!-- form -->
+                <form action="">
+                    <div class="container__formchild">
+                        <div>
+                            <label for="name">Name</label>
+                        </div>
+                        <div>
+                            <input class="form__input" type="text" name="name" id="name" placeholder="shubham waykar">
+                        </div>
+                    </div>
+                    <!-- email -->
+                    <div class="container__formchild">
+                       <div>
+                            <label for="email">Email</label>
+                       </div>
+                        <div>
+                            <input  class="form__input"  type="email" placeholder="Email Address" name="email" id="email">
+                        </div>
+                    </div>
+                    <!-- mobile number just like amazon's sine up page-->
+                    <div class="container__formchild">
+                        <div>
+                            <label for="mobile">Mobile number</label>
+                        </div>
+                        <div>
+                            <input  class="form__input"  type="tel" placeholder="Mobile number" name="mobile" id="mobile">
+                        </div>
+                    </div>
+                    <!-- password -->
+                    <div>
+                        <div class="container__formchild">
+                            <label for="password">Password</label>
+                        </div>
+                        <div>
+                            <input  class="form__input"  type="password" placeholder="At least 6 character" name="password" id="password">
+                        </div>
+                    </div>
+                    <!-- repassword -->
+                    <div class="container__formchild">
+                        <div>
+                            <label  for="re-password">Re-enter Password</label>
+                        </div>
+                        <div>
+                            <input type="password"   class="form__input" name="re-password" id="re-password">
+                        </div>
+                    </div>
+                    
+                    <!-- suggestions -->
+                    <div class="form__suggestion">
+                        <p>
+                            By enrolling your mobile phone number, you consent to receive automated security notifications via text message from Amazon. Message and data rates may apply.
+                        </p>
+                    </div>
+
+                    <!-- create account button -->
+                    <div class="form__button" >
+                        <button class="button" type="submit">Create your Amazon account</button>
+                    </div>
+                </form>
+
+                <div class="container__privacy">
+                    <p>
+                        By creating an account, you agree to Amazon's Conditions of Use and Privacy Notice.
+                        <a href="https://amazon.in">Privacy notice</a>
+                    </p>
+                </div>
+            </div>
+        
+        
+    </div>
+   <!-- condition and privacy notice -->
+    <div class="container__footer">
+         <div class="container__footerchild">
+              <p>
+                <a href="#">Conditions of use</a>
+              </p>
+         </div>
+         <div class="container__footerchild">
+              <p>
+               <a href="#">privacy notice</a>
+              </p>
+         </div>
+         <div class="container__footerchild">
+              <p>
+                <a href="#">Help</a>
+              </p>
+         </div>
+    </div>
+</body>
+</html>
