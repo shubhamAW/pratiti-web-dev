@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea style="width:200px; height: 60px;" id="area" placeholder="Write here"></textarea>
+    <br>
+    <button onclick="sessionStorage.removeItem('area');area.value=''">Clear</button>
+    <script>
+        area.value = sessionStorage.getItem('area');
+        area.oninput = () => {
+        sessionStorage.setItem('area', area.value)
+        };
+    </script>
+    <!--   
+        * sessionStorage is similar to localStorage, but it will deleted when tabl is closed.
+         <textarea style="width:200px; height: 60px;" id="area" placeholder="Write here"></textarea>
+        <br>
+        <button onclick="sessionStorage.removeItem('area');area.value=''">Clear</button>
+        <script>
+            area.value = sessionStorage.getItem('area');
+            area.oninput = () => {
+            sessionStorage.setItem('area', area.value)
+            };
+        </script>
+       
+     -->
+</body>
+</html>

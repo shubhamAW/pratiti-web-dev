@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let  emp={
+            empno: 1001,
+            name:'ram',
+            salary: 10000,
+            address: {
+                city: 'pune',
+                state: 'maharashtra',
+                pin: 500001
+            },
+            display: function(){
+                alert(this.empno);
+                console.log(this.name);
+                console.log(this.salary);
+                console.log(this.address.city);
+                console.log(this.address.state);
+                console.log(this.address.pin);
+            },
+        };
+        emp.display();
+        // object destructuring
+
+        let {empno, name, salary, address:{city, state, pin}}=emp;
+        console.log(empno);
+        console.log(name);
+        console.log(salary);
+        console.log(city);
+        console.log(state);
+       alert(pin);
+
+       //array destructuring
+         let arr=[10,20,30,40,50];
+         let [a,b,c,d,e]=arr;
+         alert(a+b+c+d+e);
+
+    </script>
+</body>
+</html>

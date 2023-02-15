@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+                max-width: 500px;
+                margin: 50px auto;
+                border: 2px solid #ddd;
+                padding: 20px;
+                margin-left:10%;
+                margin-right:10%;  
+                border-radius:10px;
+            }
+        .loginform {
+            margin:10px;
+          
+        }
+        .form-group{
+            margin-bottom:10px;
+           
+        }
+        .input__form{
+            padding: 8px;
+        }
+        .btn{
+            padding:10px;
+        }
+        .btn-primary{
+            background-color: blue;
+            color:white;
+            border-color:blue;
+            border-radius:10px;
+        }
+        .form__button{
+          
+        }
+
+    </style>
+</head>
+<body>
+    <form id="loginform" action="" method="post">
+        <div class="form-group">
+            <div class="form__title">
+                <label for="exampleInputEmail1">Email address</label>
+            </div>
+            <div>
+                <input class="input__form" type="email" class="form-control email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div> 
+           
+            <div>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+        </div>
+        <div class="form-group">
+           <div class="form__title">
+            <label for="exampleInputPassword1">Password</label>
+           </div>
+           <div>
+            <input  class="input__form" type="password" class="form-control password" id="exampleInputPassword1" placeholder="Password">
+           </div>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <div class="form__button">
+            <button class="btn btn-primary" onclick="submitLoginForm()">Submit</button>
+        </div>
+    
+    </form>
+    
+    <script src="cookiesutility.js"> </script>
+</body>
+</html>
