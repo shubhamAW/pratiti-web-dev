@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21-jquery</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script>
+       $(function(){
+        $("button").css("padding","10px")
+         $("button").click(function(){
+           var priceElem = $("<p/>").text("69000 Rs").attr("style","color:red");
+           $(".product").find("p").remove();
+           $(".product").append(priceElem); //as a last child of product class element
+           $(".product").after(priceElem); //after the given provided class element.
+         })
+       })
+    </script>
+</head>
+<body>
+   <ul>
+    <li class="product">
+        <h2>iPhone 14</h2>
+        <button>Get Price</button>
+    </li>
+   </ul>
+</body>
+</html>

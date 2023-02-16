@@ -8,11 +8,34 @@
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
     <script>
        $(function(){
-        alert("hello");
+        // alert("hello");
+        $(".abc").children("p").css("color","green");
+
+        $(".abc").siblings("div").children("p").css("color","purple"); //Traverse to sibling 
+        
+        $(".abc").parent().children("div").children("p").css("color","red"); //Traverse to parent
+
+        $("div").last().children("p").css("color","blue"); //Traverse to last child
+
+        $($("div").get(1)).children("p").css("color","red");
+        
+        $("div").eq(1).children("p").css("color","gold"); //Traverse to eq child
+
+        $("div").filter(".abc").children("p").css("color","orange"); //Traverse to filter child
+
+        $("div").not(".abc").children("p").css("color","pink"); //Traverse to not child
+
+       $("body").first().css("color","blue"); 
        })
     </script>
 </head>
 <body>
-    
+    <p>One</p>
+    <div class="abc">
+        <p>Two</p>
+    </div>
+    <div >
+        <p>three</p>
+    </div>
 </body>
 </html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align:center;
+        }
+       
+        .btn{
+            padding:10px;
+            border-radius:8px;
+            border:none;
+        }
+        .btn__up{
+            background-color: green;
+            color:white;
+        }
+        .btn__down{
+            background-color: red;
+            color:white;
+        }
+        .tr__1{
+            background-color: antiquewhite;
+        }
+        .tr__3{
+            background-color:aqua;
+        }
+    </style>
+
+     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+     <script>
+        $(function(){
+          $("button").css("padding","10px");
+          $("button").click(function(){
+            //table row up & down using jquery
+            var row = $(this).closest("tr"); //var row=$(this).parent().parent();
+            if($(this).text() == "up"){
+              row.prev().before(row);
+            }else{
+                row.next().after(row);
+            }
+          })
+        })
+    </script>
+</head>
+<body>
+    <table >
+        <thead>
+            <tr>
+                <th>Employee id</th>
+                <th>Employee name</th>
+                <th>Employee salary</th>
+                <th>Actions</th>
+            </tr>
+        </thead> 
+        <tbody>
+            <tr class="tr__1">
+                <td>1</td>
+                <td>John</td>
+                <td>50000</td>
+                <td><button class="btn__up btn">up</button> <button  class="btn__down btn">Down</button></td>
+            </tr>
+            <tr class="tr__2">
+                <td>2</td>
+                <td>Smith</td>
+                <td>60000</td>
+                <td><button class="btn__up btn">up</button> <button  class="btn__down btn">Down</button></td>
+            </tr>
+            <tr class="tr__3">
+                <td>3</td>
+                <td>David</td>
+                <td>70000</td>
+                <td><button class="btn__up btn">up</button> <button  class="btn__down btn">Down</button></td>
+            </tr>
+        </tbody>
+       
+    </table>
+</body>
+</html>

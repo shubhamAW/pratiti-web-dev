@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25 jquery</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script>
+       $(function(){
+         $("button").css("padding","10px");
+         $("button").click(function(){
+            //enter no of passenger and dynamically create name of those passengers  & passenger age
+            var noOfPassenger = $("#noOfPassenger").val();
+           var outer_details=  $("<h1/>").text("Passenger's Details: ");
+            $("from").append(outer_details);
+            $("form").append("<hr>");
+            for(var i=1;i<=noOfPassenger;i++){
+                var personDetail= $("<h3/>").text("Passenger "+i);
+                var passengerName = $("<input/>").attr("type","text").attr("placeholder","Enter passenger name ").attr("class","input__form input__form--name");
+                var passengerAge= $("<input/>").attr("type","number").attr("placeholder","Age " ).attr("class","input__form input__form--age");
+                //solve the append problem wanted to single time append
+                $("form").append(personDetail);
+                $("form").append(passengerName);
+                $("form").append(passengerAge);
+                $("form").append("<br>");
+                $("form").append("<hr>");
+            }
+           var submit = $("form").append("<button class='btn  btn-okay'>submit</button>").attr("id","submit");
+            
+         },
+
+       
+         );
+           $("#submit").click(function(){
+            var noOfPassenger = $("#noOfPassenger").val();
+            for(var i=1;i<=noOfPassenger;i++){
+                var passengerName = $(".input__form--name").val();
+                var passengerAge = $(".input__form--age").val();
+                var passengerDetails = $("<p/>").text(passengerName);
+                $("section").append(passengerDetails);
+                var passengerDetails = $("<p/>").text(passengerAge);
+                $("section").append(passengerDetails);
+            }
+         });
+         
+         
+       })
+   </script>
+   <style>
+        .body{
+            background-color: antiquewhite;
+        }
+        .container__form{
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            justify-content: center;
+            background-color: beige;
+            
+        }
+         .input__form{
+              margin:10px;
+              padding:10px;
+              border-radius:10px;
+         }
+            .input__form--name{
+                width:300px;
+            }
+            .input__form--age{
+                width:100px;
+            }
+        .input__main{
+            width:250px;
+        }
+         .btn{
+                padding:10px;
+                border-radius:8px;
+                border:none;
+         }
+         .btn-okay{
+            background-color: green;
+            color:white;
+            width:100px;
+            margin-bottom: 20px;
+         }
+         .container__noofpassenger{
+             margin-top: 40px;
+         }
+   </style>
+</head>
+<body>
+    <h1>Passenger Information System</h1>
+    <div class="container__form">
+        <h3 class="container__noofpassenger">No of passenger</h3>
+        <input  class="input__form input__main" " type="number" id="noOfPassenger" class="input__form"  placeholder="Enter no of passenger">
+        <button class="btn btn-okay">Okay</button>
+        
+    </div>
+    <form class="container__customerdetails">
+    </form>
+
+    <table>
+        <tr>
+            <th>Passenger Name</th>
+            <th>Passenger Age</th>
+        </tr>
+    </table>
+    <section>
+
+    </section>
+</body>
+</html>

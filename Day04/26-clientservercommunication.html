@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+
+    <script>
+        $(function(){
+          $("button").css("padding","10px");
+          $("button").click(function(){
+            //asynchronous request to openwheather api 
+            navigator.geolocation.getCurrentPosition((position)=>{
+                var lat = position.coords.latitude;
+                var lon = position.coords.longitude;
+                var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=138b91f7502c917df454a94449df5c18&units=metric`;
+               
+                $.ajax({
+                    //ajax call to url
+                    url:url,
+                    type:'GET',
+                    success: function(response){
+                        // alert(JSON.stringify(response));
+                        
+                    }       
+                })
+            })
+          });
+        })
+    </script>
+</head>
+<body>
+    <button>Show Weather</button>
+    <div>
+    </div>
+</body>
+</html>
+
+<!-- 
+    json - javascript object notation
+    xml = 
+
+    Ajax= asynchronous javascript and xml..
+ -->
