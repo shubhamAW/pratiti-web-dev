@@ -24,7 +24,8 @@
                     type:'GET',
                     success: function(response){
                         // alert(JSON.stringify(response));
-                        
+                        alert(response.weather[0].description);
+                        alert(response.main.temp);
                     }       
                 })
             })
