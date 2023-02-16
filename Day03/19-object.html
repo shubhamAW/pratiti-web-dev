@@ -42,6 +42,44 @@
          let [a,b,c,d,e]=arr;
          alert(a+b+c+d+e);
 
+         //rest operator
+            let [x,y,...z]=arr;
+            alert(x); //10
+            alert(y); //20
+            alert(z); //30,40,50
+
+        //self invoking function
+        (function(){
+            alert();
+        })();
+
+        //arrow function
+        let add=(a,b)=>a+b;
+        alert(add(10,20));
+
+        //default parameter
+        let sub=(a,b=10)=>a-b;
+        alert(sub(20));
+
+        //spread operator
+        let arr1=[10,20,30];
+        let arr2=[40,50,60];
+        let arr3=[...arr1, ...arr2];
+        alert(arr3);
+
+        //closure function
+        function outer(){
+            let a=10;
+            function inner(){
+                alert(a);
+            }
+            return inner;
+        }
+        let f=outer();
+        f();
+
+        
+
     </script>
 </body>
 </html>

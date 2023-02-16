@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //closure
+        function outer(){
+            let a=10;
+            function inner(){
+                alert(a);
+            }
+            a++;
+            return inner;
+        }
+        let f=outer();
+
+        //not using closure
+        function notUsingClosure(){
+            for(var i=0;i<5;i++){
+                let link=document.createElement("a");
+                link.innerHTML="Hello"+i;;
+                link.onclick=function(){
+                    alert(i);
+                }
+                document.body.appendChild(link);
+            }
+        }
+        notUsingClosure();
+        
+    </script>
+</body>
+</html>
