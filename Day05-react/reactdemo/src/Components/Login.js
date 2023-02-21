@@ -1,8 +1,12 @@
 import './Login.css';
+import {useNavigate} from 'react-router-dom';
 import {useState} from 'react';
 
 const Login = () => {
-   const[userData , setUserData]= useState({
+
+    const navigate = useNavigate();
+
+const[userData , setUserData]= useState({
         username:'',
         password:'',
     })
@@ -23,6 +27,15 @@ const Login = () => {
     function handleSubmit(event){
         event.preventDefault();
         //do something with the data such as sending it to the server..
+
+
+        if(userData.username === 'shubham' && userData.password === '1234'){
+            sessionStorage.setItem('loggedInUser',userData.username);
+            navigate('/DashBoard');
+        }
+        else{
+            navigate('/InvalidUserLogin');
+        }
     }
 
   return (
